@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
 :root {
-    --PrimaryColor: #008080;
+    --PrimaryColor: #00C4CC;
     --BackGroundColor: #222222;
-    --Secondary: #F0F0F0;
+    --Secondary: #ECFEFF ;
     --Accent: #FFC000;
 }
 
@@ -23,12 +23,27 @@ html {
 
 body {
     width: 100%;
-    height: 100vh;
     overflow-x: hidden;
     background-color: var(--BackGroundColor);
     color: var(--Secondary);
+    overflow-y:scroll; /* Allow vertical scrolling */
+    height: fit-content;
 }
-
+.backimage{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-image: url('background.jpg');
+   opacity: 0.3;
+   background-repeat: no-repeat;
+   background-size: cover;
+   pointer-events: none;
+   mask-image: radial-gradient( circle at 30% 50%, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
 header {
     margin-top: 20px;
     position: fixed;
@@ -139,14 +154,9 @@ span {
     font-size: 1.6rem;
 }
 
-.home-img {
-    border-radius: 50%;
-}
-
 .home-img img {
     position: relative;
-    width: 32vw;
-    border-radius: 50%;
+    width: 40vw;
     box-shadow: 0 0 25px solid var(--PrimaryColor);
     cursor: pointer;
     transition: 0.2s linear;
@@ -218,26 +228,35 @@ span {
 }
 
 .typing-text {
-    font-size: 34px;
+    font-size: 100px;
     font-weight: 600;
     width: 100%;
+    line-height: 45px;
 }
 
 .typing-text span {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(2 * 56px); /* Height for 2 lines based on line-height */
+    line-height: 1.5; /* Set consistent line spacing */
+    overflow: hidden; /* Hide extra content */
     position: relative;
 }
 
 .typing-text span::before {
     content: "hi";
     color: var(--Accent);
-    animation: words 3s infinite;
+    font-size: 56px;
+    transition:ease-in-out;
+    animation: words 7s infinite;
 }
 
 
 .typing-text span::after {
     background-color: var(--BackGroundColor);
     position: relative;
-    width: 100%;
+    width: fit-content;
     height: 100%;
     border-left: 3px solid var(--BackGroundColor);
     right: -8;
@@ -245,13 +264,14 @@ span {
 
 
 @keyframes words {
-    0%{ opacity: 1; content: "hi";}
-    24%{ opacity: 0; content: "hi";}
-    25%{ opacity: 0; content: "bye";}
-    50%{ opacity: 1; content: "bye";}
-    74%{ opacity: 0; content: "bye";}
-    75%{ opacity: 0; content: "hi";}
-    100%{ opacity: 0; content: "hi";}
+    0%{ opacity: 1; content: "Games";}
+    19%{ opacity: 0; content: "Games";filter: blur(5px); font-size: 0px; }
+    20%{ opacity: 0; content: "Assets for Games";}
+    35%{ opacity: 1; content: "Assets for Games";filter: blur(0px); font-size: 56px;}
+    65%{ opacity: 1; content: "Assets for Games";filter: blur(0px); font-size: 56px;}
+    79%{ opacity: 0; content: "Assets for Games";filter: blur(5px); font-size: 0px;}
+    80%{ opacity: 0; content: "Games";}
+    100%{ opacity: 1; content: "Games";filter: blur(0px);font-size: 56px;}
 }
 
 .co-text {
@@ -262,6 +282,11 @@ span {
     .home {
         gap: 4rem;
     }
+}
+@media (min-width: 1000px) {
+body{
+    position: fixed;
+}
 }
 
 @media(max-width:995px) {
@@ -276,10 +301,40 @@ span {
 
     .home-content h1 {
         font-size: 5rem;
+        text-align: center;
     }
 
     .home-img img {
         width: 70vw;
         margin-top: 4rem;
+    }
+    .backimage{
+        mask-image: radial-gradient( circle at 50% 40%, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+        position: fixed; /* Ensures it covers the viewport */
+        top: 0;
+        left: 0;
+        width: 100%; /* Covers the full width */
+        height: 100%; /* Covers the full height */
+        z-index: 1; /* Stays behind all other elements */
+        background-image: url('background.jpg'); /* Your background image */
+        background-repeat: no-repeat;
+        background-size: cover; /* Ensures the image covers the entire area */
+        background-attachment: fixed; /* Keeps the image fixed during scroll */
+        opacity: 0.3; /* Adjust transparency if needed */
+        pointer-events: none; /* Makes it non-interactive */
+    }
+    .typing-text{
+        text-align: center;
+    }
+    .co-text{
+        text-align: center;
+    }
+    .typing-text span {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: calc(2 * 78px); /* Height for 2 lines based on line-height */
+        line-height: 1.5; /* Set consistent line spacing */ /* Hide extra content */
+        position: relative;
     }
 }
