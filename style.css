@@ -36,13 +36,12 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 0;
     background-image: url('background.jpg');
    opacity: 0.3;
    background-repeat: no-repeat;
    background-size: cover;
    pointer-events: none;
-   mask-image: radial-gradient( circle at 30% 50%, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
 }
 header {
     margin-top: 20px;
@@ -311,13 +310,12 @@ body{
         margin-top: 4rem;
     }
     .backimage{
-        mask-image: radial-gradient( circle at 50% 50%, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
         position: fixed; /* Ensures it covers the viewport */
         top: 0;
         left: 0;
         width: 100%; /* Covers the full width */
         height: 100%; /* Covers the full height */
-        z-index: 1; /* Stays behind all other elements */
+        z-index: 0; /* Stays behind all other elements */
         background-image: url('background.jpg'); /* Your background image */
         background-repeat: no-repeat;
         background-size: cover; /* Ensures the image covers the entire area */

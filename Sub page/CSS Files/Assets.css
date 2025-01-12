@@ -246,7 +246,6 @@ section {
         left: 0;
         bottom: 0;
         z-index: -1; /* Stays behind all other elements */
-        background-image: url('/background.jpg'); /* Your background image */
         background-repeat: repeat;
         background-size: cover; /* Ensures the image covers the entire area */
         background-attachment:fixed; /* Keeps the image fixed during scroll */
