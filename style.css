@@ -241,11 +241,11 @@ span {
     line-height: 1.5; /* Set consistent line spacing */
     overflow: hidden; /* Hide extra content */
     position: relative;
-    transform-origin: center;
 }
 
 .typing-text span::before {
-    content: "hi";
+    transform-origin:left;
+    content: "Games";
     color: var(--Accent);
     font-size: 56px;
     transition:ease-in-out;
