@@ -6,6 +6,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://codydream.github.io/Cody-Dream/">
     <meta name="description" content="we Create High quality games and Assets for games that will help people to build better games faster and easily.">
     <title>Cody Dream Game Developer</title>
 </head>
@@ -24,16 +25,20 @@
 <body>
     <div class="backimage"></div>
     <header style="position: relative;">
-        <a href="#" class="logo" >Cody Dreams</a>
-        <nav>
+        <a href="#" class="logo">Cody Dreams</a>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav id="navbar">
             <a href="#" class="active"> Home</a>
-            <a href="./Content/Assets.html" >Assets</a>
-            <a href="./404.html" >Games</a>
-            <a href="./404.html" >future direction</a>
-            <a href="./404.html" >Tutoreals</a>
-            <a href="./404.html" >About Us</a>
-        </nav>            
-</header>
+            <a href="./Content/Assets.html">Assets</a>
+            <a href="./404.html">Games</a>
+            <a href="./404.html">Future Direction</a>
+            <a href="./404.html">Tutorials</a>
+            <a href="./404.html">About Us</a>
+        </nav>
+    </header>
+
     </div>
     <section class="home">
         <div class="home-img">
@@ -47,16 +52,27 @@
                  Our mission is to empower developers with quality tools and entertain players with unforgettable experiences.
                   Join us in transforming ideas into reality!</p>
                   <br>
-                  <h1 ><a href="./Content/Assets.html" style="text-decoration: underline; color: #FFC000;"> Lets Explore Our Assets</a></h1>
+                  <h2 ><a href="./Content/Assets.html" style="text-decoration: underline; color: #FFC000;"> Lets Explore Our Assets</a></h2>
             <div class="social-icons">
                 <a href="https://assetstore.unity.com/publishers/95756" class="links-special"><i class="fa-brands fa-unity"></i></a>
                 <a href="https://cody-dreams.itch.io/"><i class="fa-brands fa-itch-io"></i></a>
                 <a href="https://www.youtube.com/@CodyDreams"><i class="fa-brands fa-youtube"></i></a>
                 <a href="https://www.artstation.com/codydreams"><i class="fa-brands fa-artstation"></i></a>
                 <a href="https://discord.gg/ubA3V4Ur"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfoSmSC9m-FIbBIgakzq8fbGN_Z9NRtF7PKOLVqu6KJuLu_Tg/viewform?usp=header"><i class="fa-brands fa-wpforms"></i></a>
             </div>
         </div>
     </article>
     </section>
 </body>
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
+
+    menuToggle.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+        menuToggle.querySelector('i').classList.toggle('fa-bars');
+        menuToggle.querySelector('i').classList.toggle('fa-times');
+    });
+</script>
 </html>

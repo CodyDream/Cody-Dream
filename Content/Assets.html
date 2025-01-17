@@ -27,7 +27,10 @@
     <div class="backimage"></div>
     <header style="position: relative;">
         <a href="#" class="logo">Cody Dreams</a>
-        <nav>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav id="navbar">
             <a href="../index.html" >Home</a>
             <a href="#" class="active">Assets</a>
             <a href="../404.html">Games</a>
@@ -91,10 +94,20 @@
                 <a href="https://www.youtube.com/@CodyDreams"><i class="fa-brands fa-youtube"></i></a>
                 <a href="https://www.artstation.com/codydreams"><i class="fa-brands fa-artstation"></i></a>
                 <a href="https://discord.gg/ubA3V4Ur"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfoSmSC9m-FIbBIgakzq8fbGN_Z9NRtF7PKOLVqu6KJuLu_Tg/viewform?usp=header"><i class="fa-brands fa-wpforms"></i></a>
             </div>
         </center>
     </footer>
     </section>
 </body>
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
 
+    menuToggle.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+        menuToggle.querySelector('i').classList.toggle('fa-bars');
+        menuToggle.querySelector('i').classList.toggle('fa-times');
+    });
+</script>
 </html>

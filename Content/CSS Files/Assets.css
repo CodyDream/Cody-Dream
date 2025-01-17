@@ -37,7 +37,6 @@ body {
 .logo:hover {
     transform: scale(1.1);
 }
-
 .card {
     font-size: 160%;
     background-color: #ffffff10;
@@ -80,9 +79,10 @@ body {
   /* Responsive Adjustments (Media Query for Mobile) */
   @media (max-width: 768px) { 
     .card {
-      margin: 0% auto;
+      margin: 5% auto;
       width: 75%; /* Make cards full width on smaller screens */
       display: block;
+      text-align: center;
     }
     .card-content {
         margin-top: 1%;
@@ -133,32 +133,45 @@ nav a.active {
     color: var(--PrimaryColor);
     border-bottom: 3px solid var(--PrimaryColor);
 }
-
+.menu-toggle {
+    display: none;
+    font-size: 3rem;
+    color: var(--PrimaryColor);
+    cursor: pointer;
+    z-index: 200;
+}
 @media(max-width:995px) {
-    nav {
+    .menu-toggle {
+        display: block;
         position: absolute;
+        right: 2rem;
+        top: 1.5rem;
+    }
+
+    nav {
         display: none;
-        top: 0;
-        right: 0;
-        width: 40%;
-        border-left: 3px solid var(--PrimaryColor);
-        border-bottom: 3px solid var(--PrimaryColor);
-        border-bottom-left-radius: 2rem;
-        padding: 1rem solid;
+        flex-direction: column;
+        position: absolute;
+        top: 6rem;
+        right: 1rem;
         background-color: #161616;
-        border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+        border-radius: 1rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        padding: 2rem;
+        width: 80%;
+        max-width: 300px;
+        transition: 0.3s ease;
     }
 
     nav.active {
-        display: block;
+        display: flex;
     }
 
     nav a {
-        display: block;
+        margin: 1.5rem 0;
         font-size: 2rem;
-        margin: 3rem 0;
+        text-align: center;
     }
-
     nav a:hover,
     nav a.active {
         padding: 1rem;
