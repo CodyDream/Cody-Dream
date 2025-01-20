@@ -25,4 +25,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GH_TOKEN }}
-        publish_dir: ./  # Update this to your build directory if needed
+        publish_dir: ./index.html  # Since you're using main, this is the root directory
