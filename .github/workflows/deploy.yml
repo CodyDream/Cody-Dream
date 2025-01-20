@@ -3,29 +3,26 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main  # Trigger deployment when pushing to main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Check out the repository
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # Step 2: Inject AdSense Publisher ID and Google Site Verification
     - name: Inject AdSense Publisher ID and Google Site Verification
       run: |
         sed -i "s/{{ADSENSE_ID}}/$ADSENSE_ID/g" index.html
         sed -i "s/{{GOOGLE_SITE_VERIFICATION}}/$GOOGLE_SITE_VERIFICATION/g" index.html
       env:
-        ADSENSE_ID: ${{ secrets.ADSENSE_ID_GOOGLE }}
-        GOOGLE_SITE_VERIFICATION: ${{ secrets.GOOGLE_SITE_VERTIFICATION }}
+        ADSENSE_ID: ${{ secrets.ADSENSE_ID }}
+        GOOGLE_SITE_VERIFICATION: ${{ secrets.GOOGLE_SITE_VERIFICATION }}
 
-    # Step 3: Deploy to GitHub Pages using the GH_TOKEN secret
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GH_TOKEN }}  # Ensure this is your secret's correct  name
-        publish_dir: ./  # Directory to publish (usually root or the folder with your files)
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./  # Update this to your build directory if needed
