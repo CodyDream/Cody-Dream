@@ -24,9 +24,5 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GH_TOKEN }}
-        publish_dir: ./index.html  # Since you're using main, this is the root directory
-
-    - name: Check HTML content before deploy
-      run: cat index.html
-
+        github_token: ${{ secrets.Gh_TOKEN }}
+        publish_dir: ./  # Since you're using main, this is the root directory
