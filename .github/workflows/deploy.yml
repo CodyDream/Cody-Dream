@@ -15,8 +15,8 @@ jobs:
 
     - name: Inject AdSense Publisher ID and Google Site Verification
       run: |
-        sed -i "s/{{ADSENSE_ID}}/$ADSENSE_ID/g" index.html
-        sed -i "s/{{GOOGLE_SITE_VERIFICATION}}/$GOOGLE_SITE_VERIFICATION/g" index.html
+        sed -i "s/{{ADSENSE_ID}}/$ADSENSE_ID/g" ./index.html
+        sed -i "s/{{GOOGLE_SITE_VERIFICATION}}/$GOOGLE_SITE_VERIFICATION/g" ./index.html
       env:
         ADSENSE_ID: ${{ secrets.ADSENSE_ID }}
         GOOGLE_SITE_VERIFICATION: ${{ secrets.GOOGLE_SITE_VERIFICATION }}
@@ -26,3 +26,7 @@ jobs:
       with:
         github_token: ${{ secrets.GH_TOKEN }}
         publish_dir: ./index.html  # Since you're using main, this is the root directory
+
+    - name: Check HTML content before deploy
+       run: cat ./index.html
+
