@@ -1,0 +1,36 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Check out the repository
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Step 2: Replace placeholder with AdSense ID secret
+    - name: Inject AdSense Publisher ID
+      run: |
+        sed -i "s/{{ADSENSE_ID}}/$ADSENSE_ID_GOOGLE/g" index.html
+      env:
+        ADSENSE_ID_GOOGLE: ${{ secrets.ADSENSE_ID_GOOGLE }}
+
+    # Step 3: Replace placeholder with Google Site Verification secret
+    - name: Inject Google Site Verification secret
+      run: |
+        sed -i "s/{{GOOGLE_SITE_VERIFICATION}}/$GOOGLE_SITE_VERIFICATION/g" index.html
+      env:
+        GOOGLE_SITE_VERIFICATION: ${{ secrets.GOOGLE_SITE_VERIFICATION }}
+
+    # Step 4: Deploy to GitHub Pages
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./ # The directory containing your website files
