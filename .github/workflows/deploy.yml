@@ -23,13 +23,9 @@ jobs:
         ADSENSE_ID: ${{ secrets.ADSENSE_ID_GOOGLE }}
         GOOGLE_SITE_VERIFICATION: ${{ secrets.GOOGLE_SITE_VERTIFICATION }}
 
-    # Step 3: Set up GitHub token permissions (Use a Personal Access Token if needed)
-    - name: Set up GitHub token permissions
-      run: echo "GITHUB_TOKEN=${{ secrets.GH_TOKEN }}" >> $GITHUB_ENV
-
-    # Step 4: Deploy to GitHub Pages
+    # Step 3: Deploy to GitHub Pages using the secret GitHub Token (GH_TOKEN)
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GH_TOKEN }}  # Use your PAT secret here
+        github_token: ${{ secrets.GH_TOKEN }}  # Ensure the secret name matches
         publish_dir: ./  # The directory containing your website files
