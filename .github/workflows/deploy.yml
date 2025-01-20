@@ -23,9 +23,9 @@ jobs:
         ADSENSE_ID: ${{ secrets.ADSENSE_ID_GOOGLE }}
         GOOGLE_SITE_VERIFICATION: ${{ secrets.GOOGLE_SITE_VERTIFICATION }}
 
-    # Step 3: Deploy to GitHub Pages using the secret GitHub Token (GH_TOKEN)
+    # Step 3: Deploy to GitHub Pages using the GH_TOKEN secret
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GH_TOKEN }}  # Ensure the secret name matches
-        publish_dir: ./  # The directory containing your website files
+        github_token: ${{ secrets.GH_TOKEN }}  # Ensure this is your secret's correct name
+        publish_dir: ./  # Directory to publish (usually root or the folder with your files)
