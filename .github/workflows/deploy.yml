@@ -26,3 +26,5 @@ jobs:
       with:
         github_token: ${{ secrets.Gh_TOKEN }}
         publish_dir: ./  # Since you're using main, this is the root directory
+    - name: Check HTML content before deploy
+  run: cat path/to/your/index.html
