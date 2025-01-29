@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <title>Error 404</title>
-</head>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 
 :root {
     --PrimaryColor: #00C4CC;
@@ -47,7 +37,6 @@ body {
 .logo:hover {
     transform: scale(1.1);
 }
-
 .card {
     font-size: 160%;
     background-color: #ffffff10;
@@ -90,9 +79,10 @@ body {
   /* Responsive Adjustments (Media Query for Mobile) */
   @media (max-width: 768px) { 
     .card {
-      margin: 0% auto;
+      margin: 5% auto;
       width: 75%; /* Make cards full width on smaller screens */
       display: block;
+      text-align: center;
     }
     .card-content {
         margin-top: 1%;
@@ -109,7 +99,7 @@ body {
     left: 0;
     right: 0;
     z-index: -1;
-    background-image: url('https://codydream.github.io/Cody-Dream/background.jpg');
+    background-image: url('../../background.jpg');
    opacity: 0.3;
    background-repeat: no-repeat;
    background-size: cover;
@@ -143,32 +133,45 @@ nav a.active {
     color: var(--PrimaryColor);
     border-bottom: 3px solid var(--PrimaryColor);
 }
-
+.menu-toggle {
+    display: none;
+    font-size: 3rem;
+    color: var(--PrimaryColor);
+    cursor: pointer;
+    z-index: 200;
+}
 @media(max-width:995px) {
-    nav {
+    .menu-toggle {
+        display: block;
         position: absolute;
+        right: 2rem;
+        top: 1.5rem;
+    }
+
+    nav {
         display: none;
-        top: 0;
-        right: 0;
-        width: 40%;
-        border-left: 3px solid var(--PrimaryColor);
-        border-bottom: 3px solid var(--PrimaryColor);
-        border-bottom-left-radius: 2rem;
-        padding: 1rem solid;
+        flex-direction: column;
+        position: absolute;
+        top: 6rem;
+        right: 1rem;
         background-color: #161616;
-        border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+        border-radius: 1rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        padding: 2rem;
+        width: 80%;
+        max-width: 300px;
+        transition: 0.3s ease;
     }
 
     nav.active {
-        display: block;
+        display: flex;
     }
 
     nav a {
-        display: block;
+        margin: 1.5rem 0;
         font-size: 2rem;
-        margin: 3rem 0;
+        text-align: center;
     }
-
     nav a:hover,
     nav a.active {
         padding: 1rem;
@@ -263,51 +266,116 @@ section {
         pointer-events: none; /* Makes it non-interactive */
     }
 }
-</style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TL63X38WPW"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
 
-    gtag('config', 'G-TL63X38WPW');
+/* Featured Image Styles */
+.featured-image {
+    margin: -2rem -2rem 3rem;
+    overflow: hidden;
+    border-radius: 1.5rem ;
+    background-color: rgba(0, 0, 0, 0.1);
+}
 
-</script>
+.featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
 
-<body style="position: fixed;">
-    
-    <header style="position: relative;">
-        <a href="./index.html" class="logo">Cody Dreams</a>
-        <nav>
-            <a href="./index.html" >Home</a>
-            <a href="./Content/Assets.html">Assets</a>
-            <a href="#">Games</a>
-            <a href="#">future direction</a>
-            <a href="#">Tutoreals</a>
-            <a href="#">About Us</a>
-        </nav>
-    </header>
-    
-    <div class="backimage"></div>
-    <div style="font-size: 320%; position: fixed; bottom: 45%; width: 100%; text-align: center;">
-    <center>
-            <h1> Error 404</h1>
-    <h2 style="color: #FFC000;">Page not found</h2>
-</center>
-    </div>
+.featured-image:hover img {
+    transform: scale(1.2);
+}
 
-        <center style="position: fixed; bottom: 0%; text-align: center; width: 100%; justify-content: center;">
-            <div class="social-icons">
-                <a href="https://assetstore.unity.com/publishers/95756" class="links-special"><i
-                        class="fa-brands fa-unity"></i></a>
-                <a href="https://cody-dreams.itch.io/"><i class="fa-brands fa-itch-io"></i></a>
-                <a href="https://www.youtube.com/@CodyDreams"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://www.artstation.com/codydreams"><i class="fa-brands fa-artstation"></i></a>
-                <a href="https://discord.gg/ubA3V4Ur"><i class="fa-brands fa-discord"></i></a>
-            </div>
-        </center>
-    </section>
-</body>
+/* Article Specific Styles */
+section {
+    max-width: 800px;
+    margin: 8rem auto;
+    padding: 2rem;
+    line-height: 1.6;
+    font-size: 1.6rem;
+}
 
-</html>
+section h1 {
+    font-size: 4rem;
+    color: var(--PrimaryColor);
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+section h2 {
+    font-size: 2.8rem;
+    color: var(--Accent);
+    margin: 3rem 0 1.5rem;
+}
+
+section h3 {
+    font-size: 2.2rem;
+    color: var(--Secondary);
+    margin: 2rem 0 1rem;
+}
+
+section p {
+    margin-bottom: 2rem;
+    color: var(--Secondary);
+}
+
+section ul, section ol {
+    margin: 2rem 0;
+    padding-left: 2.5rem;
+}
+
+section li {
+    margin-bottom: 1rem;
+    color: var(--Secondary);
+}
+
+section code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+    font-family: monospace;
+    font-size: 1.4rem;
+}
+
+.note {
+    background: rgba(0, 196, 204, 0.1);
+    border-left: 4px solid var(--PrimaryColor);
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.note p {
+    margin: 0;
+}
+
+/* Medium-style responsive adjustments */
+@media (max-width: 850px) {
+    section {
+        padding: 2rem;
+        margin: 6rem 2rem;
+    }
+
+    section h1 {
+        font-size: 3.2rem;
+    }
+
+    section h2 {
+        font-size: 2.4rem;
+    }
+
+    section h3 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 1.5rem;
+        margin: 4rem 1.5rem;
+    }
+
+    section h1 {
+        font-size: 2.8rem;
+    }
+}
