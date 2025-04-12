@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../CSS Files/Assets.css">
+    <meta name="description"
+        content="Cody Dream Tutoreals , come to explore our tutoreals">
+    <title>Our Unity Assets</title>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TL63X38WPW"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-TL63X38WPW');
+
+</script>
+
+<body>
+    <div class="backimage"></div>
+    <header style="position: relative;">
+        <a href="#" class="logo">Cody Dreams</a>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav id="navbar">
+            <a href="../../index.html" >Home</a>
+            <a href="../Assets.html" >Assets</a>
+            <a href="../404.html">Games</a>
+            <a href="../404.html">future direction</a>
+            <a href="#" class="active">Tutorial</a>
+            <a href="../404.html">About Us</a>
+        </nav>
+    </header>
+
+    <div class="card">
+        <a href="./procedural gen.html"
+            target="_blank">
+            <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*K4yGceMPCM8vV-swmuGZ_Q.png"
+                alt="Fake Fog" width="256px" height="256px" /></a>
+        <div class="card-content">
+            <h1>Procedural Terrain Generation in Unity: An Introduction</h1>
+            <h3>        Creating stunning terrains for your game can be challenging, especially
+                when you want to strike the perfect balance between handcrafted
+                precision and procedural generation. This article introduces an approach
+                to procedural terrain generation in Unity while keeping it simple and
+                efficient, leveraging the power of... <br>
+                <a href="./procedural%20gen.html"
+                    target="_blank">Learn More</a>
+            </h3>
+        </div>
+    </div>
+    
+    <footer>
+        <center>
+            <div class="social-icons">
+                <a href="https://assetstore.unity.com/publishers/95756" class="links-special"><i
+                        class="fa-brands fa-unity"></i></a>
+                <a href="https://cody-dreams.itch.io/"><i class="fa-brands fa-itch-io"></i></a>
+                <a href="https://www.youtube.com/@CodyDreams"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.artstation.com/codydreams"><i class="fa-brands fa-artstation"></i></a>
+                <a href="https://discord.gg/ubA3V4Ur"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfoSmSC9m-FIbBIgakzq8fbGN_Z9NRtF7PKOLVqu6KJuLu_Tg/viewform?usp=header"><i class="fa-brands fa-wpforms"></i></a>
+            </div>
+        </center>
+    </footer>
+    </section>
+</body>
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
+
+    menuToggle.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+        menuToggle.querySelector('i').classList.toggle('fa-bars');
+        menuToggle.querySelector('i').classList.toggle('fa-times');
+    });
+</script>
+</html>
