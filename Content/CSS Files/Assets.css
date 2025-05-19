@@ -99,7 +99,7 @@ body {
     left: 0;
     right: 0;
     z-index: -1;
-    background-image: url('../../background.jpg');
+    background-image: url('../../Common Data/background.jpg');
    opacity: 0.3;
    background-repeat: no-repeat;
    background-size: cover;
@@ -113,7 +113,7 @@ header {
     width: 100%;
     padding: 1rem 9%;
     background-color: transparent;
-    filter: drop-shadow(10px);
+    filter: drop-shadow(10px , 10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -239,7 +239,7 @@ section {
 }
 
 .btn:hover {
-    transform: scale3d(1.03);
+    transform: scale(1.03,1.03);
     background-color: var(--PrimaryColor);
     color: var(--BackGroundColor);
     box-shadow: 0 0 25px var(--PrimaryColor);
