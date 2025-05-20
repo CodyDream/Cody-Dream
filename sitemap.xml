@@ -9,23 +9,33 @@
 
 <url>
   <loc>https://codydream.github.io/Cody-Dream/</loc>
-  <lastmod>2025-01-21T06:01:23+00:00</lastmod>
+  <lastmod>2025-05-20T21:38:21+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://codydream.github.io/Cody-Dream/Content/Assets.html</loc>
-  <lastmod>2025-01-21T06:01:23+00:00</lastmod>
+  <lastmod>2025-05-20T21:38:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://codydream.github.io/Cody-Dream/404.html</loc>
-  <lastmod>2025-01-21T06:01:23+00:00</lastmod>
+  <lastmod>2025-05-20T21:38:21+00:00</lastmod>
+  <priority>0.10</priority>
+</url>
+<url>
+  <loc>https://codydream.github.io/Cody-Dream/Content/tutoreals/tutorial%20main.html</loc>
+  <lastmod>2025-05-20T21:38:21+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://codydream.github.io/Cody-Dream/index.html</loc>
-  <lastmod>2025-01-21T06:01:23+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2025-05-20T21:38:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://codydream.github.io/Cody-Dream/Content/tutoreals/procedural%20gen.html</loc>
+  <lastmod>2025-05-20T21:38:21+00:00</lastmod>
+  <priority>0.70</priority>
 </url>
 
 
