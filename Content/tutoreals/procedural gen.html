@@ -1,210 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="../CSS Files/article.css" />
-    <meta
-      name="description"
-      content="Step into creating hybrid procedural generation of terrain"
-    />
-    <title>Hybrid Procedural generation p1</title>
-  </head>
 
-  <body>
-    <div class="backimage"></div>
-    <header style="position: relative">
-      <a href="#" class="logo">Cody Dreams</a>
-      <div class="menu-toggle" id="menu-toggle">
-        <i class="fas fa-bars"></i>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="../CSS Files/article.css" />
+  <meta name="description" content="Step into creating hybrid procedural generation of terrain" />
+  <title>Hybrid Procedural generation p1</title>
+</head>
+
+<body>
+  <div class="backimage"></div>
+  <header style="position: relative">
+    <a href="#" class="logo">Cody Dreams</a>
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <nav id="navbar">
+      <a href="../../index.html">Home</a>
+      <a href="../Assets.html">Assets</a>
+      <a href="../../404.html">Games</a>
+      <a href="../../404.html">Future Direction</a>
+      <a href="tutorial%20main.html" class="active">Tutorials</a>
+      <a href="../../404.html">About Us</a>
+    </nav>
+  </header>
+
+  <!-- Article Section -->
+  <section>
+    <div class="featured-image">
+      <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*K4yGceMPCM8vV-swmuGZ_Q.png"
+        alt="Procedural Terrain Generation in Unity" />
+    </div>
+
+    <h1>Procedural Terrain Generation in Unity: An Introduction</h1>
+
+    <p>
+      Creating stunning terrains for your game can be challenging, especially
+      when you want to strike the perfect balance between handcrafted
+      precision and procedural generation. This article introduces an approach
+      to procedural terrain generation in Unity while keeping it simple and
+      efficient, leveraging the power of shaders and coroutines.
+    </p>
+
+    <h2>Why Shaders for Procedural Generation?</h2>
+    <p>
+      Implementing procedural terrain generation often requires generating
+      complex noise like Voronoi, Perlin, or fractal noise. Unity's C# doesn't
+      natively support these noises, and creating them from scratch can be
+      computationally expensive. However, Unity's Shader Graph or custom
+      shaders provide built-in support for such noises, making them an
+      excellent choice for generating heightmaps.
+    </p>
+
+    <h2>Using Shaders for Performance</h2>
+    <p>
+      Shaders are highly optimized for parallel computation on the GPU,
+      enabling them to process complex mathematical operations efficiently. By
+      rendering noise to a Render Texture using a shader, we can offload the
+      generation process to the GPU, significantly improving performance. Once
+      the texture is generated, it can be sampled and used in terrain
+      manipulation.
+    </p>
+
+    <h3>Key Points:</h3>
+    <ul>
+      <li>
+        Noise generation happens in the shader and is rendered into a Render
+        Texture.
+      </li>
+      <li>
+        The texture is sampled once at the start to avoid runtime performance
+        overhead.
+      </li>
+      <li>
+        Since reading texture pixels can be computationally expensive,
+        coroutines are used to process the heightmap progressively without
+        blocking the main thread.
+      </li>
+    </ul>
+
+    <h2>Combining Procedural and Handcrafted Terrains</h2>
+    <p>
+      One of the most powerful aspects of this system is its flexibility to
+      blend procedural generation with handcrafted elements. By defining two
+      ranges on the terrain, you can set a range where procedural terrain
+      applies and the set middle of that range as fully procedural. Both range
+      ends mark the end of procedural blending. Heights of the base terrain
+      below or above those heights are fully handcrafted.
+    </p>
+
+    <div class="note">
+      <p>
+        <strong>Please note:</strong> For best results, select the middle
+        point as the average height of procedural height (so results look
+        natural when blending with handcrafted terrain). Also, avoid making
+        the range too big because it can make results look weird, but not too
+        low because it does not leave room for good blending. You may have to
+        manually blend the terrain in places where the handcrafted section
+        meets the middle point.
+      </p>
+    </div>
+
+    <h2>Blending Handcrafted and Procedural Heights</h2>
+    <p>The system uses a blending function that:</p>
+    <ol>
+      <li>Samples the handcrafted heights as a base.</li>
+      <li>
+        Blends procedural noise based on a fall-off mask and custom logic.
+      </li>
+      <li>
+        Allows the artist to control how much influence the handcrafted
+        elements retain versus the procedural components.
+      </li>
+    </ol>
+
+    <h2>A Modular Approach to Terrain Tools</h2>
+    <p>
+      The script in this system also integrates with external procedural tools
+      that complement the terrain generation system, enhancing the final
+      output. Examples include terrain painting tools or vegetation spawners
+      that add further customization and polish to your terrains.
+    </p>
+
+    <h2>Coroutine-Based Processing</h2>
+    <p>
+      While Shader Graph efficiently generates the noise, Unity's
+      <code>Texture2D.GetPixel()</code> can be expensive when sampling pixels
+      from the rendered texture. To mitigate this, the script processes
+      terrain heightmaps incrementally over multiple frames using coroutines.
+      This ensures that the main thread remains responsive, even for
+      high-resolution terrains.
+    </p>
+
+    <h3>Advantages of Using Coroutines:</h3>
+    <ul>
+      <li>Avoids blocking the main thread during terrain generation.</li>
+      <li>Allows terrain updates to happen smoothly over multiple frames.</li>
+      <li>Scales well with larger terrains or higher resolutions.</li>
+    </ul>
+
+
+    <h2>Key Takeaways for Optimizing Procedural Terrain</h2>
+    <ol>
+      <li>
+        <b>Use Shaders for Noise:</b> Leverage Unity’s Shader Graph to
+        generate and render noise to a texture for better performance.
+      </li>
+      <li>
+        <b>Blend Handcrafted and Procedural:</b> Incorporate ranges where the terrain transitions
+        between handcrafted features and procedural elements
+        to maintain control over important terrain features.
+      </li>
+      <li>
+        <b>Process Incrementally:</b>Use coroutines to process terrain data without affecting the game’s runtime
+        performance
+      </li>
+      <li>
+        <b>External Tools:</b>Combine this system with procedural tools to add further customization and polish to your
+        terrains.
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <center>
+      <div class="social-icons">
+        <a href="https://assetstore.unity.com/publishers/95756" class="links-special"><i
+            class="fa-brands fa-unity"></i></a>
+        <a href="https://cody-dreams.itch.io/"><i class="fa-brands fa-itch-io"></i></a>
+        <a href="https://www.youtube.com/@CodyDreams"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.artstation.com/codydreams"><i class="fa-brands fa-artstation"></i></a>
+        <a href="https://discord.gg/ubA3V4Ur"><i class="fa-brands fa-discord"></i></a>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfoSmSC9m-FIbBIgakzq8fbGN_Z9NRtF7PKOLVqu6KJuLu_Tg/viewform?usp=header"><i
+            class="fa-brands fa-wpforms"></i></a>
       </div>
-      <nav id="navbar">
-        <a href="../../index.html">Home</a>
-        <a href="../Assets.html">Assets</a>
-        <a href="../../404.html">Games</a>
-        <a href="../../404.html">Future Direction</a>
-        <a href="tutorial%20main.html" class="active">Tutorials</a>
-        <a href="../../404.html">About Us</a>
-      </nav>
-    </header>
+    </center>
+  </footer>
 
-    <!-- Article Section -->
-    <section>
-      <div class="featured-image">
-        <img
-          src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*K4yGceMPCM8vV-swmuGZ_Q.png"
-          alt="Procedural Terrain Generation in Unity"
-        />
-      </div>
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navbar = document.getElementById("navbar");
+    menuToggle.addEventListener("click", () => {
+      navbar.classList.toggle("active");
+      menuToggle.querySelector("i").classList.toggle("fa-bars");
+      menuToggle.querySelector("i").classList.toggle("fa-times");
+    });
+  </script>
+</body>
 
-      <h1>Procedural Terrain Generation in Unity: An Introduction</h1>
-
-      <p>
-        Creating stunning terrains for your game can be challenging, especially
-        when you want to strike the perfect balance between handcrafted
-        precision and procedural generation. This article introduces an approach
-        to procedural terrain generation in Unity while keeping it simple and
-        efficient, leveraging the power of shaders and coroutines.
-      </p>
-
-      <h2>Why Shaders for Procedural Generation?</h2>
-      <p>
-        Implementing procedural terrain generation often requires generating
-        complex noise like Voronoi, Perlin, or fractal noise. Unity's C# doesn't
-        natively support these noises, and creating them from scratch can be
-        computationally expensive. However, Unity's Shader Graph or custom
-        shaders provide built-in support for such noises, making them an
-        excellent choice for generating heightmaps.
-      </p>
-
-      <h2>Using Shaders for Performance</h2>
-      <p>
-        Shaders are highly optimized for parallel computation on the GPU,
-        enabling them to process complex mathematical operations efficiently. By
-        rendering noise to a Render Texture using a shader, we can offload the
-        generation process to the GPU, significantly improving performance. Once
-        the texture is generated, it can be sampled and used in terrain
-        manipulation.
-      </p>
-
-      <h3>Key Points:</h3>
-      <ul>
-        <li>
-          Noise generation happens in the shader and is rendered into a Render
-          Texture.
-        </li>
-        <li>
-          The texture is sampled once at the start to avoid runtime performance
-          overhead.
-        </li>
-        <li>
-          Since reading texture pixels can be computationally expensive,
-          coroutines are used to process the heightmap progressively without
-          blocking the main thread.
-        </li>
-      </ul>
-
-      <h2>Combining Procedural and Handcrafted Terrains</h2>
-      <p>
-        One of the most powerful aspects of this system is its flexibility to
-        blend procedural generation with handcrafted elements. By defining two
-        ranges on the terrain, you can set a range where procedural terrain
-        applies and the set middle of that range as fully procedural. Both range
-        ends mark the end of procedural blending. Heights of the base terrain
-        below or above those heights are fully handcrafted.
-      </p>
-
-      <div class="note">
-        <p>
-          <strong>Please note:</strong> For best results, select the middle
-          point as the average height of procedural height (so results look
-          natural when blending with handcrafted terrain). Also, avoid making
-          the range too big because it can make results look weird, but not too
-          low because it does not leave room for good blending. You may have to
-          manually blend the terrain in places where the handcrafted section
-          meets the middle point.
-        </p>
-      </div>
-
-      <h2>Blending Handcrafted and Procedural Heights</h2>
-      <p>The system uses a blending function that:</p>
-      <ol>
-        <li>Samples the handcrafted heights as a base.</li>
-        <li>
-          Blends procedural noise based on a fall-off mask and custom logic.
-        </li>
-        <li>
-          Allows the artist to control how much influence the handcrafted
-          elements retain versus the procedural components.
-        </li>
-      </ol>
-
-      <h2>A Modular Approach to Terrain Tools</h2>
-      <p>
-        The script in this system also integrates with external procedural tools
-        that complement the terrain generation system, enhancing the final
-        output. Examples include terrain painting tools or vegetation spawners
-        that add further customization and polish to your terrains.
-      </p>
-
-      <h2>Coroutine-Based Processing</h2>
-      <p>
-        While Shader Graph efficiently generates the noise, Unity's
-        <code>Texture2D.GetPixel()</code> can be expensive when sampling pixels
-        from the rendered texture. To mitigate this, the script processes
-        terrain heightmaps incrementally over multiple frames using coroutines.
-        This ensures that the main thread remains responsive, even for
-        high-resolution terrains.
-      </p>
-
-      <h3>Advantages of Using Coroutines:</h3>
-      <ul>
-        <li>Avoids blocking the main thread during terrain generation.</li>
-        <li>Allows terrain updates to happen smoothly over multiple frames.</li>
-        <li>Scales well with larger terrains or higher resolutions.</li>
-      </ul>
-
-      
-      <h2>Key Takeaways for Optimizing Procedural Terrain</h2>
-      <ol>
-        <li>
-          <b>Use Shaders for Noise:</b> Leverage Unity’s Shader Graph to
-          generate and render noise to a texture for better performance.
-        </li>
-        <li>
-          <b>Blend Handcrafted and Procedural:</b> Incorporate ranges where the terrain transitions 
-          between handcrafted features and procedural elements
-           to maintain control over important terrain features.
-        </li>
-        <li>
-          <b>Process Incrementally:</b>Use coroutines to process terrain data without affecting the game’s runtime performance
-        </li>
-        <li>
-          <b>External Tools:</b>Combine this system with procedural tools to add further customization and polish to your terrains.
-        </li>
-      </ol>
-    </section>
-
-    <footer>
-      <center>
-        <div class="social-icons">
-          <a
-            href="https://assetstore.unity.com/publishers/95756"
-            class="links-special"
-            ><i class="fa-brands fa-unity"></i
-          ></a>
-          <a href="https://cody-dreams.itch.io/"
-            ><i class="fa-brands fa-itch-io"></i
-          ></a>
-          <a href="https://www.youtube.com/@CodyDreams"
-            ><i class="fa-brands fa-youtube"></i
-          ></a>
-          <a href="https://www.artstation.com/codydreams"
-            ><i class="fa-brands fa-artstation"></i
-          ></a>
-          <a href="https://discord.gg/ubA3V4Ur"
-            ><i class="fa-brands fa-discord"></i
-          ></a>
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfoSmSC9m-FIbBIgakzq8fbGN_Z9NRtF7PKOLVqu6KJuLu_Tg/viewform?usp=header"
-            ><i class="fa-brands fa-wpforms"></i
-          ></a>
-        </div>
-      </center>
-    </footer>
-
-    <script>
-      const menuToggle = document.getElementById("menu-toggle");
-      const navbar = document.getElementById("navbar");
-      menuToggle.addEventListener("click", () => {
-        navbar.classList.toggle("active");
-        menuToggle.querySelector("i").classList.toggle("fa-bars");
-        menuToggle.querySelector("i").classList.toggle("fa-times");
-      });
-    </script>
-  </body>
 </html>

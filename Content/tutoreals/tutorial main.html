@@ -38,40 +38,8 @@
             <a href="../../404.html">About Us</a>
         </nav>
     </header>
-
-    <div class="card">
-        <a href="./procedural gen.html"
-            target="_blank">
-            <img src="https://miro.medium.com/v2/resize:fit:1100/format:webp/1*K4yGceMPCM8vV-swmuGZ_Q.png"
-                alt="procedural generation" width="256px" height="256px" /></a>
-        <div class="card-content">
-            <h1>Procedural Terrain Generation in Unity: An Introduction</h1>
-            <h3>        Creating stunning terrains for your game can be challenging, especially
-                when you want to strike the perfect balance between handcrafted
-                precision and procedural generation. This article introduces an approach
-                to procedural terrain generation in Unity while keeping it simple and
-                efficient, leveraging the power of... <br>
-                <a href="./procedural%20gen.html"
-                    target="_blank">Learn More</a>
-            </h3>
-        </div>
-    </div>
-        <div class="card">
-        <a href="./Any Pooler.html"
-            target="_blank">
-            <img src="https://assetstorev1-prd-cdn.unity3d.com/key-image/39c1d7d5-56da-4041-a306-3b2d2606e029.webp"
-                alt="Any pooler" width="256px" height="256px" /></a>
-        <div class="card-content">
-            <h1>Any Pooler documentation</h1>
-            <h3> Read the documentatiion of Any Pooler unity asset develop by us and see general usage Guidelines.
-                and future road map <br>
-                <a href="./Any Pooler.html"
-                    target="_blank">Learn More</a>
-            </h3>
-        </div>
-    </div>
-
-    
+<div id="assets-container">
+</div>
     <footer>
         <center>
             <div class="social-icons">
@@ -87,7 +55,47 @@
     </footer>
     </section>
 </body>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 <script>
+    async function loadTutorials() {
+        const container = document.getElementById('assets-container');
+
+        try {
+            const response = await fetch('../../Common Data/tutoreal.yaml');
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+            const yamlText = await response.text();
+            const data = jsyaml.load(yamlText);
+
+            // Check that it's an array before using forEach
+            if (!Array.isArray(data)) {
+                throw new Error('YAML file does not contain a list at the root.');
+            }
+
+            data.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <a href="${item.link}" target="_blank">
+                        <img src="${item.image}" alt="${item.name}" width="256px" height="256px" />
+                    </a>
+                    <div class="card-content">
+                        <h1>${item.name}</h1>
+                        <h3>${item.description}<br>
+                            <a href="${item.link}" target="_blank">Learn More</a>
+                        </h3>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        } catch (err) {
+            console.error('Failed to load tutorials:', err);
+            container.innerHTML = '<p style="color: red;">Failed to load tutorial data.</p>';
+        }
+    }
+
+    loadTutorials();
+
     const menuToggle = document.getElementById('menu-toggle');
     const navbar = document.getElementById('navbar');
 
