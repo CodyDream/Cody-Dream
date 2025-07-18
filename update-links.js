@@ -1,5 +1,5 @@
 (async function() {
-    const yamlFilePath = '/Common Data/social-links.yaml'; // Path to your YAML file
+    const yamlFilePath = './Common Data/social-links.yaml'; // Path to your YAML file
 
     try {
         // Fetch the YAML file
