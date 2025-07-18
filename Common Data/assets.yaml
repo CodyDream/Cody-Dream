@@ -1,8 +1,21 @@
+- link: "https://assetstore.unity.com/packages/tools/utilities/any-pooler-325626?aid=1011l4cMgH"
+  image: "https://assetstorev1-prd-cdn.unity3d.com/key-image/39c1d7d5-56da-4041-a306-3b2d2606e029.webp"
+  name: "Any Pooler"
+  description: "A lightning-fast, type-agnostic object pooling system for Unity. Eliminate lag from instantiation and
+    reuse objects instantly—even under heavy load—with smart LRU fallback and editor tools."
+
 - link: "https://assetstore.unity.com/packages/tools/utilities/automat-importer-hdrp-material-tool-300164?aid=1011l4cMgH"
   image: "https://assetstorev1-prd-cdn.unity3d.com/key-image/8f6d1df7-4c50-4f1f-b0ef-46e306ad8438.webp"
   name: "AutoMat:Importer & HDRP Material Tool"
   description: "(Poly Haven Supported)⚡ Instantly import ARM / ORM textures into HDRP with automated MaskMap conversion,
    alpha merging, and smart transparency detection. No manual zipping, folder sorting, or shader setup just click & go."
+
+- link: "https://assetstore.unity.com/packages/tools/utilities/automat-importer-hdrp-material-tool-demo-274286"
+  image: "https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/cdc1d289-f52d-4f0c-9257-0fb8e0b71bac.webp"
+  name: "AutoMat:Importer & HDRP Material Tool Demo (Free version)"
+  description: "(Poly Haven Supported)⚡ Instantly import ARM / ORM textures into HDRP with automated MaskMap conversion,
+   alpha merging, and smart transparency detection.Free demo version of AutoMat asset"
+
 - link: "https://assetstore.unity.com/packages/tools/particles-effects/fake-fog-296903?aid=1011l4cMgH"
   image: "https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/7d50eb31-a8e1-4ddb-ba43-529192392092.webp"
   name: "Fake Fog"
