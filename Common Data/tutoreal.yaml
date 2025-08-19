@@ -1,3 +1,8 @@
+- name: "Insta polish documentation"
+  description: "Read the documentation of insta polish unity asset developed by us and see general usage guidelines and future road map."
+  link: "../PDF files/Insta Polish Documentation.pdf"
+  image: ""
+
 - name: "Any Pooler documentation"
   description: "Read the documentation of Any Pooler unity asset developed by us and see general usage guidelines and future road map."
   link: "./Any Pooler.html"
