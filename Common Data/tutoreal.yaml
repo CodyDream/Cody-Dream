@@ -1,7 +1,7 @@
 - name: "Insta polish documentation"
   description: "Read the documentation of insta polish unity asset developed by us and see general usage guidelines and future road map."
   link: "../PDF files/Insta Polish Documentation.pdf"
-  image: ""
+  image: "https://assetstorev1-prd-cdn.unity3d.com/key-image/a6263559-38b5-453b-acd5-0953c02d169a.webp"
 
 - name: "Any Pooler documentation"
   description: "Read the documentation of Any Pooler unity asset developed by us and see general usage guidelines and future road map."

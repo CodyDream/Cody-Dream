@@ -39,9 +39,10 @@ body {
 }
 .card {
     font-size: 160%;
-    background-color: #ffffff10;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff29;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
     margin: 10rem;
     margin-top: 5rem ;
     margin-bottom: 0 ;
