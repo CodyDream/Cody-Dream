@@ -359,3 +359,76 @@ body{
         position: relative;
     }
 }
+
+/* Utility color & style classes */
+.text-primary { color: var(--PrimaryColor) !important; }
+.text-accent  { color: var(--Accent) !important; }
+.bg-primary   { background-color: var(--PrimaryColor) !important; color: var(--BackGroundColor) !important; }
+.bg-accent    { background-color: var(--Accent) !important; color: var(--BackGroundColor) !important; }
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    padding: .8rem 1.6rem;
+    background: linear-gradient(180deg, var(--PrimaryColor), #009aa0);
+    color: var(--BackGroundColor);
+    border-radius: .8rem;
+    border: 0.15rem solid rgba(0,0,0,0.08);
+    box-shadow: 0 6px 18px rgba(0,196,204,0.12);
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,196,204,0.16); }
+
+.btn-accent {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    padding: .6rem 1.2rem;
+    background: var(--Accent);
+    color: var(--BackGroundColor);
+    border-radius: .6rem;
+    border: 0.12rem solid rgba(0,0,0,0.06);
+    box-shadow: 0 6px 16px rgba(255,192,0,0.12);
+}
+
+.chip {
+    display: inline-block;
+    padding: .4rem .8rem;
+    border-radius: 2rem;
+    background: rgba(255,255,255,0.03);
+    color: var(--Secondary);
+    font-size: 1.4rem;
+    border: 0.12rem solid rgba(255,255,255,0.03);
+}
+
+.primary-outline {
+    background:transparent;
+    color: var(--PrimaryColor);
+    border: 0.2rem solid rgba(0,196,204,0.12);
+    padding: .6rem 1rem;
+    border-radius: .6rem;
+    backdrop-filter: blur(3px);
+}
+
+.accent-outline {
+    background: transparent;
+    color: var(--Accent);
+    border: 0.16rem solid rgba(255,192,0,0.12);
+    padding: .5rem .9rem;
+    border-radius: .5rem;
+}
+
+.muted {
+    color: rgba(236,254,255,0.5);
+}
+
+.small {
+    font-size: 1.2rem !important;
+}
+
+.uppercase {
+    text-transform: uppercase;
+    letter-spacing: .12rem;
+}
