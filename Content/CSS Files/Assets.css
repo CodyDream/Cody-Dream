@@ -48,12 +48,14 @@ body {
     margin-bottom: 0 ;
     overflow: hidden; /* To clip any overflowing content */
     display: flex;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
   }
   
   .card img {
     margin: 3%;
     border-radius: 5%;
-    object-fit:cover;
+    object-fit:contain;
+    width: fit-content;
   }
   .card img:hover{
     box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.2);
@@ -73,7 +75,7 @@ body {
   /* Optional: Hover Effect */
   .card:hover {
     transform: scale(1.05); 
-    transition: transform 0.2s ease-in-out; 
+
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   }
   

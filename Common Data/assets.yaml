@@ -1,37 +1,44 @@
-- link: "https://assetstore.unity.com/packages/tools/utilities/any-pooler-325626?aid=1011l4cMgH"
-  image: "https://assetstorev1-prd-cdn.unity3d.com/key-image/39c1d7d5-56da-4041-a306-3b2d2606e029.webp"
-  name: "Any Pooler"
-  description: "A lightning-fast, type-agnostic object pooling system for Unity. Eliminate lag from instantiation and
-    reuse objects instantly—even under heavy load—with smart LRU fallback and editor tools."
-
-- link: "https://assetstore.unity.com/packages/tools/utilities/automat-importer-hdrp-material-tool-300164?aid=1011l4cMgH"
-  image: "https://assetstorev1-prd-cdn.unity3d.com/key-image/8f6d1df7-4c50-4f1f-b0ef-46e306ad8438.webp"
-  name: "AutoMat:Importer & HDRP Material Tool"
-  description: "(Poly Haven Supported)⚡ Instantly import ARM / ORM textures into HDRP with automated MaskMap conversion,
-   alpha merging, and smart transparency detection. No manual zipping, folder sorting, or shader setup just click & go."
-
-- link: "https://assetstore.unity.com/packages/tools/utilities/automat-importer-hdrp-material-tool-demo-274286"
-  image: "https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/cdc1d289-f52d-4f0c-9257-0fb8e0b71bac.webp"
-  name: "AutoMat:Importer & HDRP Material Tool Demo (Free version)"
-  description: "(Poly Haven Supported)⚡ Instantly import ARM / ORM textures into HDRP with automated MaskMap conversion,
-   alpha merging, and smart transparency detection.Free demo version of AutoMat asset"
+- link: "https://assetstore.unity.com/packages/tools/terrain/terra-canvas-332652?aid=1011l4cMgH"
+  image: "https://assetstorev1-prd-cdn.unity3d.com/key-image/8de14719-6fdc-4d92-85f1-03dab80e9afc.webp"
+  name: "Terra Canvas"
+  description: "An out-of-the-box, modular hybrid terrain generation system that converts any Shader Graph–based height output into real Unity Terrain—with procedural texture, vegetation, and area preservation support."
 
 - link: "https://assetstore.unity.com/packages/tools/particles-effects/fake-fog-296903?aid=1011l4cMgH"
-  image: "https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/7d50eb31-a8e1-4ddb-ba43-529192392092.webp"
+  image: "https://assetstorev1-prd-cdn.unity3d.com/key-image/16da4cbe-57a5-4377-ad7c-8fb4ff81aad7.webp"
   name: "Fake Fog"
-  description: "Fake Fog Asset Pack – Enhance your Unity game with immersive fog, rain, and atmospheric effects.
-   Perfect for creating moody, realistic environments, this pack works seamlessly with URP and is optimized for performance,
-    bringing depth and visual appeal to your projects."
-
-- link: "https://assetstore.unity.com/packages/3d/props/weapons/pbr-medieval-weapons-301230?aid=1011l4cMgH"
-  image: "https://assetstorev1-prd-cdn.unity3d.com/key-image/4334ec73-c5b5-451a-81b4-cfed4812351b.webp"
-  name: "PBR medieval Weapons"
-  description: "FEnhance your Unity projects with PBR Medieval Weapons, a high-quality 3D pack featuring an axe,
-   sword, shield, mace, and spear. Optimized for performance and ready for diverse game genres."
+  description: "Fake Fog Asset Pack – Enhance your Unity game with immersive fog, rain, and atmospheric effects. Perfect for creating moody, realistic environments, this pack works seamlessly with URP and is optimized for performance."
 
 - link: "https://assetstore.unity.com/packages/3d/environments/low-poly-stylized-nature-281338?aid=1011l4cMgH"
   image: "https://assetstorev1-prd-cdn.unity3d.com/key-image/f95709f9-32f3-459d-babc-ca415e69a161.jpg"
   name: "Low Poly Stylized Nature"
-  description: "Enhance your game’s environment with our Unity Low Poly Stylized Nature Pack.
-   This comprehensive collection offers a variety of assets that blend simplicity with style, perfect for developers
-    aiming to create captivating natural landscapes without overburdening performance."
+  description: "Enhance your game’s environment with our Unity Low Poly Stylized Nature Pack. This comprehensive collection offers a variety of assets that blend simplicity with style, perfect for captivating natural landscapes."
+
+- link: "https://assetstore.unity.com/packages/tools/utilities/automat-importer-hdrp-material-tool-300164?aid=1011l4cMgH"
+  image: "https://assetstorev1-prd-cdn.unity3d.com/key-image/8f6d1df7-4c50-4f1f-b0ef-46e306ad8438.webp"
+  name: "AutoMat: Importer & HDRP Material Tool"
+  description: "(Poly Haven Supported) ⚡ Instantly import ARM / ORM textures into HDRP with automated MaskMap conversion, alpha merging, and smart transparency detection. No manual zipping or folder sorting—just click & go."
+
+- link: "https://assetstore.unity.com/packages/tools/utilities/any-pooler-325626?aid=1011l4cMgH"
+  image: "https://assetstorev1-prd-cdn.unity3d.com/key-image/39c1d7d5-56da-4041-a306-3b2d2606e029.webp"
+  name: "Any Pooler"
+  description: "A lightning-fast, type-agnostic object pooling system for Unity. Eliminate lag from instantiation and reuse objects instantly—even under heavy load—with smart LRU fallback and editor tools."
+
+- link: "https://assetstore.unity.com/packages/tools/utilities/insta-polish-instant-polish-your-game-329157?aid=1011l4cMgH"
+  image: "https://assetstorev1-prd-cdn.unity3d.com/key-image/a6263559-38b5-453b-acd5-0953c02d169a.webp"
+  name: "Insta Polish - Instant polish your game"
+  description: "Drag-and-drop polish effects for Unity—speed up game jams & indie projects with shaders, scripts, and visual touches that make your game feel finished fast."
+
+- link: "https://assetstore.unity.com/packages/vfx/shaders/fog-presets-fake-fog-327058?aid=1011l4cMgH"
+  image: "https://assetstorev1-prd-cdn.unity3d.com/key-image/035e13df-cf87-4c7e-977a-d429a12153aa.webp"
+  name: "Fog Presets (Fake Fog)"
+  description: "Jumpstart your atmospheric design! This pack gives ready-to-use fog presets for the Fake Fog asset, showcasing its full potential across various environments."
+
+- link: "https://assetstore.unity.com/packages/3d/props/weapons/pbr-medieval-weapons-301230?aid=1011l4cMgH"
+  image: "https://assetstorev1-prd-cdn.unity3d.com/key-image/4334ec73-c5b5-451a-81b4-cfed4812351b.webp"
+  name: "PBR Medieval Weapons"
+  description: "Enhance your Unity projects with PBR Medieval Weapons, a high-quality 3D pack featuring an axe, sword, shield, mace, and spear. Optimized for performance and ready for diverse game genres."
+
+- link: "https://assetstore.unity.com/packages/tools/utilities/automat-importer-hdrp-material-tool-demo-274286?aid=1011l4cMgH"
+  image: "https://assetstorev1-prd-cdn.unity3d.com/key-image/a727917d-ed9e-4ad7-a8f0-c44cafc2187e.webp"
+  name: "AutoMat: Importer & HDRP Material Tool Demo (Free)"
+  description: "Free demo version of the AutoMat asset. Instantly import ARM / ORM textures into HDRP with automated MaskMap conversion and alpha merging."
