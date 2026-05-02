@@ -1,21 +1,29 @@
-- name: "Insta polish documentation"
-  description: "Read the documentation of insta polish unity asset developed by us and see general usage guidelines and future road map."
-  link: "../PDF files/Insta Polish Documentation.pdf"
-  image: "https://assetstorev1-prd-cdn.unity3d.com/key-image/a6263559-38b5-453b-acd5-0953c02d169a.webp"
+- name: "Terra Canvas Documentation"
+  description: "Master the modular hybrid terrain generation system. Learn how to convert Shader Graph outputs into optimized Unity Terrain with procedural vegetation support."
+  link: "../PDF files/Terra Canvas Documentation.pdf"
+  image: "https://assetstorev1-prd-cdn.unity3d.com/key-image/8de14719-6fdc-4d92-85f1-03dab80e9afc.webp"
 
-- name: "Any Pooler documentation"
-  description: "Read the documentation of Any Pooler unity asset developed by us and see general usage guidelines and future road map."
+- name: "Fake Fog: Comprehensive Guide"
+  description: "Our complete interactive guide for Fake Fog setup, URP optimization, and atmospheric tailoring for moody, realistic game environments."
+  link: "./Fake Fog.html"
+  image: "https://assetstorev1-prd-cdn.unity3d.com/key-image/16da4cbe-57a5-4377-ad7c-8fb4ff81aad7.webp"
+
+- name: "Any Pooler: Technical Manual"
+  description: "Interactive breakdown of the type-agnostic pooling system. Learn about LRU fallback logic and performance benchmarking directly in your browser."
   link: "./Any Pooler.html"
   image: "https://assetstorev1-prd-cdn.unity3d.com/key-image/39c1d7d5-56da-4041-a306-3b2d2606e029.webp"
 
-- name: "Fake Fog documentation"
-  description: "Read the documentation of Fake Fog unity asset developed by us "
-  link: "./Fake Fog.html"
-  image: "https://assetstorev1-prd-cdn.unity3d.com/package-screenshot/7d50eb31-a8e1-4ddb-ba43-529192392092.webp"
-
 - name: "Procedural Terrain Generation in Unity: An Introduction"
-  description: "Creating stunning terrains for your game can be challenging, especially when you want to strike the perfect
-   balance between handcrafted precision and procedural generation. This article introduces an approach to procedural terrain
-    generation in Unity while keeping it simple and efficient, leveraging the power of..."
+  description: "A deep dive into striking the perfect balance between handcrafted precision and procedural efficiency in Unity."
   link: "./procedural gen.html"
   image: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*K4yGceMPCM8vV-swmuGZ_Q.png"
+
+- name: "Fake Fog Preset Pack Documentation"
+  description: "Explore the ready-to-use fog presets. Learn how to quickly swap environments from misty nights to underwater depths using the preset system."
+  link: "../PDF files/Fake Fog Preset Pack Documentation.pdf"
+  image: "https://assetstorev1-prd-cdn.unity3d.com/key-image/035e13df-cf87-4c7e-977a-d429a12153aa.webp"
+
+- name: "Insta Polish Documentation"
+  description: "Usage guidelines for drag-and-drop polish effects, shaders, and scripts to finish your game jams and indie projects fast."
+  link: "../PDF files/Insta Polish Documentation.pdf"
+  image: "https://assetstorev1-prd-cdn.unity3d.com/key-image/a6263559-38b5-453b-acd5-0953c02d169a.webp"
