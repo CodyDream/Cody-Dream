@@ -1,8 +1,9 @@
 {
   "dependencies": {
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "puppeteer": "^24.43.1"
   },
   "scripts": {
-  "start-server": "http-server"
-}
+    "start-server": "http-server"
+  }
 }
